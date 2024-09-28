@@ -1,0 +1,124 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Helvetica', sans-serif;
+    background-color: #f0f0f0;
+    color: #333;
+}
+
+#intro-scene {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(to bottom, #87ceeb, #fff);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    overflow: hidden;
+}
+
+#mountains {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 200px;
+    background-image: url('mountains.png'); /* Add your mountains image */
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+#click-to-start {
+    position: absolute;
+    bottom: 50px;
+    text-align: center;
+}
+
+#start-btn {
+    padding: 15px 30px;
+    font-size: 18px;
+    border: none;
+    background-color: #ff6f61;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#start-btn:hover {
+    background-color: #ff4c3b;
+}
+
+#car-animation {
+    position: absolute;
+    width: 100px;
+    height: 50px;
+    background-image: url('car.png'); /* Add your car image */
+    background-size: contain;
+    background-repeat: no-repeat;
+    animation: carMove 5s infinite;
+    bottom: 80px; /* Position it above the mountains */
+}
+
+@keyframes carMove {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100vw); }
+}
+
+#main-content {
+    display: none;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+#app-title {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.container {
+    max-width: 800px;
+    margin: 50px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+.card {
+    margin-bottom: 20px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+}
+
+.card:hover {
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+button {
+    background-color: #ff6f61;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #ff4c3b;
+}
+
+/* Style for the expense chart */
+canvas {
+    margin-top: 20px;
+}

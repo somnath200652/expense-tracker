@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Expense Tracker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Opening Animation -->
+    <div id="intro-scene">
+        <div id="mountains"></div>
+        <div id="car-animation"></div>
+        <div id="click-to-start">
+            <button id="start-btn">Click to Start</button>
+        </div>
+    </div>
+
+    <!-- Main App Content (hidden initially) -->
+    <div id="main-content" style="display: none;">
+        <h1 id="app-title">Travel Expense Tracker</h1>
+
+        <!-- Budget and Expense Section -->
+        <div class="container">
+            <div class="card">
+                <h2>Set Your Trip Budget</h2>
+                <input type="number" id="trip-budget" placeholder="Enter trip budget">
+                <button id="set-budget">Set Budget</button>
+                <p id="budget-display"></p>
+            </div>
+
+            <div class="card">
+                <h2>Log Expense</h2>
+                <form id="expense-form">
+                    <input type="number" id="amount" placeholder="Amount" required>
+                    <input type="text" id="description" placeholder="Description" required>
+                    <select id="category">
+                        <option value="Accommodation">Accommodation</option>
+                        <option value="Food">Food</option>
+                        <option value="Transportation">Transportation</option>
+                        <option value="Entertainment">Entertainment</option>
+                    </select>
+                    <button type="submit">Add Expense</button>
+                </form>
+            </div>
+
+            <div class="card">
+                <h2>Expense List</h2>
+                <ul id="expense-list"></ul>
+            </div>
+
+            <div class="card">
+                <h2>Expense Report</h2>
+                <canvas id="expenseChart"></canvas>
+                <button id="export-btn">Export as CSV</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
